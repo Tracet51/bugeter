@@ -117,13 +117,14 @@ class _TransactionBuilderFormState extends State<TransactionBuilderForm> {
                                   (budget) =>
                                       budget.name == budgetName);
                               _transaction.budgetId = selectedBudget.id;
-                              if (_transaction.transactionId == null) {
-                                Firestore.instance
+                              if (_transaction.transactionId != null) {
+                                await Firestore.instance
                                     .collection('transactions')
                                     .document(_transaction.transactionId)
                                     .updateData(_transaction.toMap());
                               } else {
-                                Db().upload(_transaction, 'transactions');
+                                _transaction.date = DateTime.now();
+                                await Db().upload(_transaction, 'transactions');
                               }
                               Navigator.pop(context);
                             },

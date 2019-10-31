@@ -60,7 +60,7 @@ class BudgetPage extends StatelessWidget {
                           ],
                         ),
                       ),
-                      color: Theme.of(context).primaryColor,
+                      color: Theme.of(context).primaryColorLight,
                     );
                   },
                 ),

@@ -23,14 +23,14 @@ class App extends StatelessWidget {
   ThemeData _buildLightTheme() {
     _baseTextTheme = _baseThemeData.textTheme;
     return _baseThemeData.copyWith(
-        primaryColor: BudgeterColors.navy,
+        primaryColor: Colors.purple,
         accentColor: BudgeterColors.teal,
         scaffoldBackgroundColor: Colors.grey[300],
         cardColor: Colors.grey[400],
         canvasColor: Colors.grey[400],
         buttonColor: BudgeterColors.navy,
         floatingActionButtonTheme: _buidlFloatingActionButtonThemeData(),
-        textTheme: _buildTextTheme(BudgeterColors.white));
+        textTheme: _buildTextTheme(BudgeterColors.navy_light));
   }
 
   FloatingActionButtonThemeData _buidlFloatingActionButtonThemeData() {
